@@ -1,0 +1,28 @@
+DROP table 주문;
+
+CREATE TABLE 주문 (
+    주문번호 NUMBER(8) PRIMARY KEY,
+    주문일련번호 NUMBER(20),
+    고객ID NUMBER(8) REFERENCES 고객(고객ID),
+    메뉴명 VARCHAR2(20) REFERENCES 메뉴(메뉴명),
+    갯수 NUMBER(3),
+    결제금액 NUMBER(8)
+);
+
+INSERT INTO 주문 VALUES (1, 1, 1111, '치킨', 2, 26000);
+INSERT INTO 주문 VALUES (1, 2, 1111, '피자', 1, 20000);
+INSERT INTO 주문 VALUES (2, 1, 2222, '짬뽕', 2, 16000);
+INSERT INTO 주문 VALUES (3, 1, 3333, '치킨', 1, 15000);
+INSERT INTO 주문 VALUES (4, 1, 4444, '족발', 1, 17000);
+INSERT INTO 주문 VALUES (4, 2, 4444, '보쌈', 1, 8000);
+INSERT INTO 주문 VALUES (5, 1, 5555, '떡볶이', 1, 40000);
+INSERT INTO 주문 VALUES (5, 2, 5555, '주먹밥', 2, 11000);
+INSERT INTO 주문 VALUES (6, 1, 6666, '삼겹살', 2, 4000);
+INSERT INTO 주문 VALUES (7, 1, 7777, '불고기버거', 1, 30000);
+INSERT INTO 주문 VALUES (7, 2, 7777, '치즈스틱', 2, 5000);
+INSERT INTO 주문 VALUES (8, 1, 8888, '껍데기', 1, 50000);
+INSERT INTO 주문 VALUES (8, 2, 8888, '맥주', 1, 30000);
+INSERT INTO 주문 VALUES (9, 1, 9999, '닭발', 2, 30000);
+INSERT INTO 주문 VALUES (10, 1, 1010, '돈까스세트', 2, 30000);
+
+COMMIT;
